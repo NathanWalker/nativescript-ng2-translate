@@ -7,7 +7,7 @@ import {
 } from 'angular2/testing';
 
 import {provide} from 'angular2/core';
-import {NSMultilingualLoader} from './nativescript-ng2-translate-loader.service';
+import {TNSTranslateLoader} from './nativescript-ng2-translate-loader.service';
 
 import {knownFolders} from 'file-system';
 
@@ -27,18 +27,18 @@ class KnownFolders {
   }
 }
 
-describe('NSMultilingualLoader', () => {
+describe('TNSTranslateLoader', () => {
 
   beforeEachProviders(() => {
     return [
       provide(knownFolders, {
         useClass: KnownFolders
       }),
-      NSMultilingualLoader
+      TNSTranslateLoader
     ]
   });
 
-  it('should provide translation', inject([NSMultilingualLoader], (loader:NSMultilingualLoader) => {
+  it('should provide translation', inject([TNSTranslateLoader], (loader:TNSTranslateLoader) => {
     expect(loader.getTranslation('en')).toEqual({});
   }));
 

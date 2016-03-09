@@ -12,7 +12,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {TranslateLoader, TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 
 // app
-import {NSMultilingualLoader} from 'nativescript-ng2-translate/nativescript-ng2-translate';
+import {TNSTranslateLoader} from 'nativescript-ng2-translate/nativescript-ng2-translate';
 
 @Component({
   selector: 'app',
@@ -44,7 +44,7 @@ nativeScriptBootstrap(TestComponent, [
   HTTP_PROVIDERS,
   provide(TranslateLoader, {
     useFactory: () => {
-      return new NSMultilingualLoader('assets/i18n');
+      return new TNSTranslateLoader('assets/i18n');
     }
   }),
   TranslateService

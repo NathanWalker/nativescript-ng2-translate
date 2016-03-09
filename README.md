@@ -2,6 +2,11 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/preboot/angular2-library-seed/status.svg)](https://david-dm.org/preboot/angular2-library-seed#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angular2-library-seed/dev-status.svg)](https://david-dm.org/preboot/angular2-webpack#info=devDependencies)
 
+* [Install](#install)
+* [Usage](#usage)
+* [Why the `TNS` prefixed name?](#why-the-tns-prefixed-name)
+* [Accolades](#accolades)
+
 ## Install
 
 ```
@@ -45,7 +50,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 
 // libs
 import {TranslateLoader, TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
-import {NSMultilingualLoader} from 'nativescript-ng2-translate/nativescript-ng2-translate';
+import {TNSTranslateLoader} from 'nativescript-ng2-translate/nativescript-ng2-translate';
 
 @Component({
   selector: 'app',
@@ -63,12 +68,21 @@ nativeScriptBootstrap(TestComponent, [
   provide(TranslateLoader, {
     useFactory: () => {
       // pass in the path to your locale files
-      return new NSMultilingualLoader('assets/i18n');
+      return new TNSTranslateLoader('assets/i18n');
     }
   }),
   TranslateService
 ]);
 ```
+
+## Why the TNS prefixed name?
+
+`TNS` stands for **T**elerik **N**ative**S**cript
+
+iOS uses classes prefixed with `NS` (stemming from the NextStep days of old):
+https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/
+
+To avoid confusion with iOS native classes, `TNS` is used instead.
 
 ## Accolades
 

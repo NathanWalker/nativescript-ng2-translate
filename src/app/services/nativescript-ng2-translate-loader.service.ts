@@ -10,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 
 @Injectable()
-export class NSMultilingualLoader implements TranslateLoader {
+export class TNSTranslateLoader implements TranslateLoader {
   private _currentLang: string;
   private _currentTranslation: any;
   private _loaderParams: any = { prefix: 'i18n', suffix: '.json' };

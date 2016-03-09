@@ -1,6 +1,6 @@
 {
   "name": "nativescript-ng2-translate",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Use ng2-translate with NativeScript + Angular2.",
   "repository": {
     "type": "git",
