@@ -1,7 +1,24 @@
 {
   "name": "nativescript-ng2-translate",
-  "version": "1.0.0",
+  "version": "1.0.3",
+  "description": "Use ng2-translate with NativeScript + Angular2.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanWalker/nativescript-ng2-translate.git"
+  },
+  "keywords": [
+    "angular2",
+    "ng2",
+    "ng2-translate",
+    "i18n",
+    "nativescript"
+  ],
+  "author": "NathanWalker <NathanWalker>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NathanWalker/nativescript-ng2-translate/issues"
+  },
+  "homepage": "https://github.com/NathanWalker/nativescript-ng2-translate#readme",
   "scripts": {
     "build": "tsc",
     "demo.ios": "npm run preparedemo; cd src; tns emulate ios",

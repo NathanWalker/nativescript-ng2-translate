@@ -35,6 +35,7 @@ Then in there, create translation files, for example:
 #### 2. Setup NativeScript/Angular
 
 * `app.ts`:
+
 ```
 import {nativeScriptBootstrap} from 'nativescript-angular/application';
 

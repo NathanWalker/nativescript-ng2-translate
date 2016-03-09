@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import {nativeScriptBootstrap} from 'nativescript-angular/application';
 
 // angular 
-import {Component, provide, enableProdMode} from 'angular2/core';
+import {Component, provide} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
 // libs
@@ -13,10 +13,6 @@ import {TranslateLoader, TranslateService, TranslatePipe} from 'ng2-translate/ng
 
 // app
 import {NSMultilingualLoader} from 'nativescript-ng2-translate/nativescript-ng2-translate';
-  
-// avoids change detection errors
-// TODO: understand why detection errors occur when not in production mode
-// enableProdMode();
 
 @Component({
   selector: 'app',
