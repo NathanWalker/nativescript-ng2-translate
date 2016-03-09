@@ -79,7 +79,7 @@ nativeScriptBootstrap(TestComponent, [
 
 `TNS` stands for **T**elerik **N**ative**S**cript
 
-iOS uses classes prefixed with `NS` (stemming from the NextStep days of old):
+iOS uses classes prefixed with `NS` (stemming from the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) days of old):
 https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/
 
 To avoid confusion with iOS native classes, `TNS` is used instead.
