@@ -5,8 +5,8 @@ import 'rxjs/add/operator/map';
 import {nativeScriptBootstrap} from 'nativescript-angular/application';
 
 // angular 
-import {Component, provide} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {Component, provide} from '@angular/core';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 // libs
 import {TranslateLoader, TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';

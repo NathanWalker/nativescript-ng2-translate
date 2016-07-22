@@ -6,10 +6,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "moduleResolution": "node"
+    "noEmitHelpers": true
   },
   "files": [
-    "typings/browser.d.ts",
+    "typings/main.d.ts",
     "node_modules/tns-core-modules/file-system/file-system.d.ts",
     "nativescript-ng2-translate.ts"
   ],

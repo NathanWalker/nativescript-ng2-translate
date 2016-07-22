@@ -4,9 +4,9 @@ import {
   expect,
   inject,
   beforeEachProviders
-} from 'angular2/testing';
+} from '@angular/testing';
 
-import {provide} from 'angular2/core';
+import {provide} from '@angular/core';
 import {TNSTranslateLoader} from './nativescript-ng2-translate-loader.service';
 
 import {knownFolders} from 'file-system';

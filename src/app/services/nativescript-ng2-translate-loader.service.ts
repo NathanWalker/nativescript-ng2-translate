@@ -1,5 +1,5 @@
 // angular
-import {Injectable, Optional} from 'angular2/core';
+import {Injectable, Optional} from '@angular/core';
 
 // nativescript
 import {knownFolders} from 'file-system';
@@ -25,7 +25,7 @@ export class TNSTranslateLoader implements TranslateLoader {
   }
 
   public getTranslation(lang: string): Observable<any> {
-    if (this._currentLang !== lang) {
+    if (!this._currentTranslation || this._currentLang !== lang) {
       this._currentLang = lang;
       let app = knownFolders.currentApp();
       let locale = app.getFile(`${this._loaderParams.prefix}/${lang}${this._loaderParams.suffix}`);
