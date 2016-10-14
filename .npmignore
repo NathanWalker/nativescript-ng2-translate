@@ -62,3 +62,5 @@ typings
 .travis.yml
 .jshintrc
 .editorconfig
+*.ts
+!*.d.ts

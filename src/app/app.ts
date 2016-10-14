@@ -1,18 +1,19 @@
-﻿import 'reflect-metadata';
-import 'rxjs/add/operator/map';
+﻿// import 'reflect-metadata';
+// import 'rxjs/add/operator/map';
 
 // nativescript
-import {nativeScriptBootstrap} from 'nativescript-angular/application';
+import { NativeScriptModule, platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 // angular 
-import {Component, provide} from '@angular/core';
-import {HTTP_PROVIDERS} from '@angular/http';
+import { NgModule, Component } from "@angular/core";
 
 // libs
-import {TranslateLoader, TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
+import { TranslateModule, TranslateLoader, TranslateService } from 'ng2-translate';
 
 // app
-import {TNSTranslateLoader} from 'nativescript-ng2-translate/nativescript-ng2-translate';
+import { TNSTranslateLoader } from 'nativescript-ng2-translate/nativescript-ng2-translate';
 
 @Component({
   selector: 'app',
@@ -21,8 +22,7 @@ import {TNSTranslateLoader} from 'nativescript-ng2-translate/nativescript-ng2-tr
     <SegmentedBar [items]="supportedLanguages" (selectedIndexChanged)="changeLang($event)"></SegmentedBar>
     <Label [text]="'HOME' | translate"></Label>
   </StackLayout>
-  `,
-  pipes: [TranslatePipe]
+  `
 })
 class TestComponent {
   public supportedLanguages: Array<any> = [
@@ -40,13 +40,47 @@ class TestComponent {
   }
 }
 
-nativeScriptBootstrap(TestComponent, [
-  HTTP_PROVIDERS,
-  provide(TranslateLoader, {
-    useFactory: () => {
-      return new TNSTranslateLoader('assets/i18n');
-    }
-  }),
-  TranslateService
-]);
+@NgModule({
+  imports: [
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    NativeScriptHttpModule,
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: () => new TNSTranslateLoader('assets/i18n')
+    })
+  ],
+  exports: [
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    NativeScriptHttpModule,
+    TranslateModule
+  ]
+})
+class AppModule { }
+
+function makeBootstrapModule(componentType) {
+  let imports: any[] = [AppModule];
+  let entries = [];
+  if (componentType.entries) {
+    entries = componentType.entries;
+  }
+  entries.push(componentType);
+  let providers = [];
+  if (componentType.providers) {
+    providers = componentType.providers
+  }
+  @NgModule({
+    bootstrap: [componentType],
+    imports: imports,
+    entryComponents: entries,
+    declarations: entries,
+    providers: providers,
+  })
+  class ExampleModuleForComponent { }
+
+  return ExampleModuleForComponent;
+}
+
+platformNativeScriptDynamic().bootstrapModule(makeBootstrapModule(TestComponent));
 

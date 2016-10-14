@@ -5,7 +5,7 @@ import {Injectable, Optional} from '@angular/core';
 import {knownFolders} from 'file-system';
 
 // libs
-import {TranslateLoader} from 'ng2-translate/ng2-translate';
+import {TranslateLoader} from 'ng2-translate';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 

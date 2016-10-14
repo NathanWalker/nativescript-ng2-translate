@@ -1,12 +1,8 @@
 import {
-  it,
-  describe,
-  expect,
-  inject,
-  beforeEachProviders
-} from '@angular/testing';
+  inject
+} from '@angular/core/testing';
+import {TestComponentBuilder, TestBed} from '@angular/core/testing';
 
-import {provide} from '@angular/core';
 import {TNSTranslateLoader} from './nativescript-ng2-translate-loader.service';
 
 import {knownFolders} from 'file-system';
@@ -28,14 +24,16 @@ class KnownFolders {
 }
 
 describe('TNSTranslateLoader', () => {
-
-  beforeEachProviders(() => {
-    return [
-      provide(knownFolders, {
-        useClass: KnownFolders
-      }),
-      TNSTranslateLoader
-    ]
+ 
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: knownFolders, useClass: KnownFolders
+        },
+        TNSTranslateLoader
+      ]
+    });
   });
 
   it('should provide translation', inject([TNSTranslateLoader], (loader:TNSTranslateLoader) => {

@@ -4,7 +4,7 @@ import {TNSTranslateLoader} from './src/app/services/nativescript-ng2-translate-
 // for manual imports
 export * from './src/app/services/nativescript-ng2-translate-loader.service';
 
-// provides standard for consumption via things like angular-cli
+// for angular-cli
 export default {
   providers: [TNSTranslateLoader]
-}
+};
