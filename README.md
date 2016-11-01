@@ -2,6 +2,13 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/preboot/angular2-library-seed/status.svg)](https://david-dm.org/preboot/angular2-library-seed#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angular2-library-seed/dev-status.svg)](https://david-dm.org/preboot/angular2-webpack#info=devDependencies)
 
+## NOTE
+
+This plugin is no longer needed to make [ng2-translate](https://github.com/ocombe/ng2-translate) work with NativeScript. Instead you can use it as normal following this as a guide to set it up:
+
+https://github.com/NathanWalker/nativescript-ng2-translate/issues/5#issuecomment-257606661
+
+
 * [Install](#install)
 * [Usage](#usage)
 * [Why the `TNS` prefixed name?](#why-the-tns-prefixed-name)

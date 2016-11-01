@@ -11,6 +11,7 @@ import { NgModule, Component } from "@angular/core";
 
 // libs
 import { TranslateModule, TranslateLoader, TranslateService } from 'ng2-translate';
+import 'rxjs/add/operator/take';
 
 // app
 import { TNSTranslateLoader } from 'nativescript-ng2-translate/nativescript-ng2-translate';
@@ -31,7 +32,9 @@ class TestComponent {
   ];
   
   constructor(private translate: TranslateService) {
-    
+    this.translate.reloadLang('en').take(1).subscribe(() => {
+      setTimeout(() => this.translate.use('en'), 0);
+    });
   }
   
   public changeLang(e) {

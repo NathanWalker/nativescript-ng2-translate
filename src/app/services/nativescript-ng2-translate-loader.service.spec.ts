@@ -1,7 +1,7 @@
 import {
   inject
 } from '@angular/core/testing';
-import {TestComponentBuilder, TestBed} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
 import {TNSTranslateLoader} from './nativescript-ng2-translate-loader.service';
 

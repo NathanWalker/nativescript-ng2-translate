@@ -3,8 +3,3 @@ import {TNSTranslateLoader} from './src/app/services/nativescript-ng2-translate-
 
 // for manual imports
 export * from './src/app/services/nativescript-ng2-translate-loader.service';
-
-// for angular-cli
-export default {
-  providers: [TNSTranslateLoader]
-};
