@@ -51,7 +51,7 @@ Then in there, create translation files, for example:
 ```
 import {nativeScriptBootstrap} from 'nativescript-angular/application';
 
-// angular 
+// angular
 import {Component, provide} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
@@ -95,6 +95,12 @@ To avoid confusion with iOS native classes, `TNS` is used instead.
 
 * Project using this library [angular2-seed-advanced](https://github.com/NathanWalker/angular2-seed-advanced)
 * [Olivier Combe's ng2-translate library](https://github.com/ocombe/ng2-translate)
+
+## Tutorials
+
+Need more help getting started?  Check out these Angular Translate tutorials for NativeScript Android and iOS applications.
+
+* [Angular Translate in a NativeScript Angular Application](https://www.thepolyglotdeveloper.com/2017/01/internationalization-nativescript-mobile-app-angular/)
 
 # License
 
